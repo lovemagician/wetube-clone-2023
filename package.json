@@ -7,7 +7,7 @@
     "url": "(https://github.com/lovemagician/wetube-clone-2023)"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node src/server.js"
+    "dev": "nodemon --exec babel-node src/init.js"
   },
   "author": "lovemagician",
   "license": "MIT",
