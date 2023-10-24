@@ -124,13 +124,25 @@ document.addEventListener("keyup", (event) => {
   if (event.code === "KeyF") {
     handleFullscreen();
   }
+  if (event.code === "Escape") {
+    document.exitFullscreen();
+    fullScreenIcon.classList = "fas fa-expand";
+  }
 });
+
+const handleEnded = () => {
+  const { id } = videoContainer.dataset;
+  fetch(`/api/videos/${id}/view`, {
+    method: "POST",
+  });
+};
 
 playBtn.addEventListener("click", handlePlayClick);
 muteBtn.addEventListener("click", handleMuteClick);
 volumeRange.addEventListener("input", handleVolumeChange);
 video.addEventListener("loadeddata", handleLoadedMetadata);
 video.addEventListener("timeupdate", handleTimeUpdate);
+video.addEventListener("ended", handleEnded);
 video.addEventListener("click", handlePlayClick);
 videoContainer.addEventListener("mousemove", handleMouseMove);
 videoContainer.addEventListener("mouseleave", handleMouseLeave);
