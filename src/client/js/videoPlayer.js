@@ -109,24 +109,26 @@ const changeVideoTime = (seconds) => {
 };
 
 document.addEventListener("keyup", (event) => {
-  if (event.code === "Space") {
-    handlePlayClick();
-  }
-  if (event.code === "ArrowRight") {
-    changeVideoTime(5);
-  }
-  if (event.code === "ArrowLeft") {
-    changeVideoTime(-5);
-  }
-  if (event.code === "KeyM") {
-    handleMuteClick();
-  }
-  if (event.code === "KeyF") {
-    handleFullscreen();
-  }
-  if (event.code === "Escape") {
-    document.exitFullscreen();
-    fullScreenIcon.classList = "fas fa-expand";
+  if (event.target.id !== "textarea") {
+    if (event.code === "Space") {
+      handlePlayClick();
+    }
+    if (event.code === "ArrowRight") {
+      changeVideoTime(5);
+    }
+    if (event.code === "ArrowLeft") {
+      changeVideoTime(-5);
+    }
+    if (event.code === "KeyM") {
+      handleMuteClick();
+    }
+    if (event.code === "KeyF") {
+      handleFullscreen();
+    }
+    if (event.code === "Escape") {
+      document.exitFullscreen();
+      fullScreenIcon.classList = "fas fa-expand";
+    }
   }
 });
 
