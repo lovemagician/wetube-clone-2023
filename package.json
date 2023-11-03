@@ -7,8 +7,12 @@
     "url": "(https://github.com/lovemagician/wetube-clone-2023)"
   },
   "scripts": {
+    "start": "node build/init.js",
+    "build": "npm run build:server && npm run build:assets",
+    "build:server": "babel src -d build",
+    "build:assets": "webpack --mode=production",
     "dev:server": "nodemon",
-    "dev:assets": "webpack"
+    "dev:assets": "webpack --mode=development -w"
   },
   "author": "lovemagician",
   "license": "MIT",
@@ -28,6 +32,7 @@
     "regenerator-runtime": "^0.14.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.23.0",
     "@babel/core": "^7.22.17",
     "@babel/node": "^7.22.15",
     "@babel/preset-env": "^7.22.15",

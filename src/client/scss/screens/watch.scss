@@ -27,9 +27,28 @@
   margin-top: 20px;
   .video__comment {
     padding: 10px;
-    border-radius: 9999px;
+    border-radius: 9px;
     background-color: white;
     color: black;
     margin-bottom: 10px;
   }
+}
+.fa-comment {
+  margin-right: 5px;
+}
+
+#textarea {
+  width: 415px;
+  height: 25px;
+}
+.video__comment-form {
+  display: flex;
+}
+.video__comment-form button {
+  color: white;
+  background-color: black;
+  padding: 0px 10px;
+  margin-left: 5px;
+  border-radius: 20px;
+  border: none;
 }

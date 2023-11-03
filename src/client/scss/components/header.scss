@@ -7,6 +7,15 @@ header {
     color: $red;
     font-size: 38px;
   }
+  .fa-youtube {
+    display: flex;
+    color: white;
+  }
+  .youtube__font {
+    font-size: 30px;
+    margin-top: 4px;
+    margin-left: 6px;
+  }
   ul {
     display: flex;
     justify-content: space-between;
