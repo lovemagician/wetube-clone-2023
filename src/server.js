@@ -25,10 +25,12 @@ app.use(
     store: MongoStore.create({ mongoUrl: process.env.DB_URL }),
   })
 );
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // 모든 도메인에서 요청을 허용
-  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE"); // 허용되는 HTTP 메소드 지정
-  res.header("Access-Control-Allow-Headers", "Content-Type"); // 요청 헤더 지정
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
   next();
 });
 app.use(flash());
